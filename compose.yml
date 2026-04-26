@@ -1,19 +1,19 @@
 services:
-  windows:
-    image: dockurr/windows
-    container_name: ubuntu
+  qemu:
+    image: qemux/qemu
+    container_name: qemu
     environment:
-      VERSION: "https://ubuntu.com/download/desktop/thank-you?version=26.04&architecture=amd64&lts=true"
+      BOOT: "ubuntu"
       KVM: "N"
+      RAM_SIZE: "8G"
+      CPU_CORES: "2"
     devices:
       - /dev/net/tun
     cap_add:
       - NET_ADMIN
     ports:
       - 8006:8006
-      - 3389:3389/tcp
-      - 3389:3389/udp
     volumes:
-      - ./windows:/storage
+      - ./qemu:/storage
     restart: always
     stop_grace_period: 2m
