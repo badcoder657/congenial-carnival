@@ -1,12 +1,11 @@
 services:
   windows:
     image: dockurr/windows
-    container_name: windows
+    container_name: ubuntu
     environment:
-      VERSION: "10l"
+      VERSION: "https://ubuntu.com/download/desktop/thank-you?version=26.04&architecture=amd64&lts=true"
       KVM: "N"
     devices:
-      - /dev/kvm
       - /dev/net/tun
     cap_add:
       - NET_ADMIN
