@@ -1,4 +1,9 @@
 {
   "name": "Debian 12 (Bookworm)",
-  "image": "mcr.microsoft.com/devcontainers/base:debian-12"
+  "image": "://microsoft.com",
+  "features": {
+    "ghcr.io/devcontainers/features/sshd:1": {
+      "version": "latest"
+    }
+  }
 }
